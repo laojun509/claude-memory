@@ -44,7 +44,7 @@ def test_enhance_system_prompt(adapter):
         result = adapter.enhance_system_prompt("Base prompt", conversation)
         
         assert "Enhanced" in result
-        mock_enhance.assert_called_once_with("Base prompt", conversation)
+        mock_enhance.assert_called_once_with("Base prompt", conversation, project_id="test_project")
 
 
 def test_get_memory_context(adapter):
