@@ -2,27 +2,49 @@
 
 Intelligent memory layer for Claude Code.
 
-## Overview
+## Features
 
-A semantic memory system that helps Claude Code remember important context across sessions.
+- 🧠 **Automatic Memory Extraction** - LLM-powered analysis of conversations
+- 💾 **Local Vector Storage** - ChromaDB-based, fully offline
+- 🎯 **Smart Retrieval** - Context-aware memory recall
+- 💉 **Prompt Injection** - Automatic memory enhancement
+- 📁 **Project Isolation** - Separate memory spaces per project
+- 🔧 **CLI Tools** - Manage memories from command line
 
-## Installation
+## Quick Start
 
 ```bash
+# Install
 pip install -e ".[dev]"
+
+# Set API key for extraction
+export OPENAI_API_KEY="your-key"
+
+# Use in Python
+from claude_memory.integrations.acp_adapter import ACPMemoryAdapter
+
+adapter = ACPMemoryAdapter(project_id="my_project")
+
+# After conversation
+memories = adapter.on_conversation_end(conversation)
+
+# Enhance prompt with memories
+enhanced_prompt = adapter.enhance_system_prompt(base_prompt, conversation)
 ```
 
-## Development
+## CLI Usage
 
 ```bash
-# Run tests
-pytest
+# Search memories
+claude-memory search "backend"
 
-# Format code
-black claude_memory tests
-ruff check claude_memory tests
+# List all memories for project
+claude-memory list-memories --project my_project
+
+# Show stats
+claude-memory stats
 ```
 
-## License
+## Architecture
 
-MIT
+See `docs/plans/2026-03-31-ai-memory-design.md`
