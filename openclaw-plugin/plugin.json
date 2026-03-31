@@ -1,0 +1,40 @@
+{
+  "id": "claude-memory",
+  "name": "Claude Memory",
+  "description": "Local intelligent memory system for Claude Code with automatic extraction and smart retrieval",
+  "version": "0.1.0",
+  "kind": "memory",
+  "entry": "plugin.ts",
+  "config": {
+    "persist_dir": {
+      "type": "string",
+      "default": "~/.claude-memory",
+      "description": "Directory to store memory database"
+    },
+    "auto_extract": {
+      "type": "boolean",
+      "default": true,
+      "description": "Automatically extract memories from conversations"
+    },
+    "auto_inject": {
+      "type": "boolean",
+      "default": true,
+      "description": "Automatically inject relevant memories into prompts"
+    },
+    "project_id": {
+      "type": "string",
+      "default": "default",
+      "description": "Current project identifier for memory isolation"
+    },
+    "max_memories_inject": {
+      "type": "number",
+      "default": 3,
+      "description": "Maximum number of memories to inject into prompt"
+    },
+    "llm_model": {
+      "type": "string",
+      "default": "gpt-4o-mini",
+      "description": "Model for memory extraction"
+    }
+  }
+}
