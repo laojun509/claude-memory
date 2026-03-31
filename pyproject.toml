@@ -1,7 +1,23 @@
 [project]
 name = "claude-memory"
 version = "0.1.0"
-description = "Intelligent memory layer for Claude Code"
+description = "Intelligent memory layer for Claude Code with multi-model support"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "laojun509", email = "your-email@example.com"}
+]
+keywords = ["claude", "memory", "ai", "llm", "openclaw", "kimi", "glm"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
 requires-python = ">=3.11"
 dependencies = [
     "chromadb>=0.4.0",
@@ -11,11 +27,25 @@ dependencies = [
     "rich>=13.0",
 ]
 
+[project.urls]
+Homepage = "https://github.com/laojun509/claude-memory"
+Documentation = "https://github.com/laojun509/claude-memory/blob/main/TUTORIAL.md"
+Repository = "https://github.com/laojun509/claude-memory.git"
+Issues = "https://github.com/laojun509/claude-memory/issues"
+
 [project.optional-dependencies]
-dev = ["pytest>=7.0", "pytest-asyncio>=0.21", "black", "ruff"]
+dev = ["pytest>=7.0", "pytest-asyncio>=0.21", "black", "ruff", "build", "twine"]
 
 [project.scripts]
 claude-memory = "claude_memory.cli.main:app"
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["claude_memory*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
