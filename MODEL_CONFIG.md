@@ -13,6 +13,7 @@ Claude Memory 支持多种大语言模型，包括国产模型。
 | **GLM** | `GLM_API_KEY` | `glm-4-flash` | 智谱AI，性价比高 |
 | **MiniMax** | `MINIMAX_API_KEY` | `minimax-text-01` | 稀宇科技 |
 | **DeepSeek** | `DEEPSEEK_API_KEY` | `deepseek-chat` | 深度求索 |
+| **DeepSeek V3** | `DEEPSEEK_API_KEY` | `deepseek-v3` | 深度求索最新版 |
 | **通义千问** | `QWEN_API_KEY` | `qwen-turbo` | 阿里云 |
 
 ---
@@ -33,6 +34,14 @@ export KIMI_API_KEY="your-kimi-api-key"
 # 使用 MiniMax
 export CLAUDE_MEMORY_LLM_PROVIDER="minimax"
 export MINIMAX_API_KEY="your-minimax-api-key"
+
+# 使用 DeepSeek
+export CLAUDE_MEMORY_LLM_PROVIDER="deepseek"
+export DEEPSEEK_API_KEY="your-deepseek-api-key"
+
+# 使用 DeepSeek V3（最新版）
+export CLAUDE_MEMORY_LLM_PROVIDER="deepseek-v3"
+export DEEPSEEK_API_KEY="your-deepseek-api-key"
 ```
 
 ### 方法二：指定具体模型

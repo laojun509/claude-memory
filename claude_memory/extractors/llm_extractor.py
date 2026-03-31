@@ -64,6 +64,11 @@ PROVIDER_CONFIG = {
         "env_key": "DEEPSEEK_API_KEY",
         "base_url": "https://api.deepseek.com",
     },
+    "deepseek-v3": {
+        "model_prefix": "deepseek-v3",
+        "env_key": "DEEPSEEK_API_KEY",
+        "base_url": "https://api.deepseek.com",
+    },
     "qwen": {
         "model_prefix": "qwen-turbo",
         "env_key": "QWEN_API_KEY",
