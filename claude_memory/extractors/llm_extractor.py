@@ -65,7 +65,7 @@ PROVIDER_CONFIG = {
         "base_url": "https://api.deepseek.com",
     },
     "deepseek-v3": {
-        "model_prefix": "deepseek-v3",
+        "model_prefix": "deepseek/deepseek-chat",
         "env_key": "DEEPSEEK_API_KEY",
         "base_url": "https://api.deepseek.com",
     },
