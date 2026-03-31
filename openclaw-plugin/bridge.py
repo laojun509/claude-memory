@@ -37,7 +37,8 @@ class MemoryPluginBridge:
             "auto_extract": os.getenv("CLAUDE_MEMORY_AUTO_EXTRACT", "true").lower() == "true",
             "auto_inject": os.getenv("CLAUDE_MEMORY_AUTO_INJECT", "true").lower() == "true",
             "max_memories_inject": int(os.getenv("CLAUDE_MEMORY_MAX_INJECT", "3")),
-            "llm_model": os.getenv("CLAUDE_MEMORY_LLM_MODEL", "gpt-4o-mini"),
+            "llm_provider": os.getenv("CLAUDE_MEMORY_LLM_PROVIDER", ""),
+            "llm_model": os.getenv("CLAUDE_MEMORY_LLM_MODEL", ""),
         }
     
     def handle_command(self, command: dict) -> dict:

@@ -20,18 +20,38 @@ chmod +x openclaw-plugin/install.sh
 
 在你的 shell 配置文件（`~/.bashrc`, `~/.zshrc` 等）中添加：
 
+**Option A: 使用 OpenAI（默认）**
 ```bash
-# Required
 export OPENAI_API_KEY="your-openai-api-key"
+```
 
-# Optional (defaults shown)
+**Option B: 使用国产模型（推荐国内用户）**
+```bash
+# GLM (智谱AI) - 免费/低价，速度快
+export CLAUDE_MEMORY_LLM_PROVIDER="glm"
+export GLM_API_KEY="your-glm-api-key"
+
+# 或 Kimi (月之暗面)
+# export CLAUDE_MEMORY_LLM_PROVIDER="kimi"
+# export KIMI_API_KEY="your-kimi-api-key"
+
+# 或 MiniMax
+# export CLAUDE_MEMORY_LLM_PROVIDER="minimax"
+# export MINIMAX_API_KEY="your-minimax-key"
+```
+
+**通用配置（所有提供商都适用）**
+```bash
 export CLAUDE_MEMORY_PROJECT="default"
 export CLAUDE_MEMORY_PERSIST_DIR="~/.claude-memory"
 export CLAUDE_MEMORY_AUTO_EXTRACT="true"
 export CLAUDE_MEMORY_AUTO_INJECT="true"
 export CLAUDE_MEMORY_MAX_INJECT="3"
-export CLAUDE_MEMORY_LLM_MODEL="gpt-4o-mini"
 ```
+
+**支持的提供商**: `openai`, `kimi`, `glm`, `minimax`, `deepseek`, `qwen`
+
+详细配置参见 [MODEL_CONFIG.md](MODEL_CONFIG.md)
 
 ### 2. 安装 OpenClaw 插件
 
